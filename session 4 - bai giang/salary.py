@@ -9,7 +9,6 @@ dsach = [{'name':'Duc','salary':30,'hours':8,'days':20},{'name':'Hoan','salary':
 #     k = k + n
 # print('Tổng tiền lương là: ', k)
 
-dùng type
 
 
 
