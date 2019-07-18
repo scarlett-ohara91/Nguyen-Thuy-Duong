@@ -2,18 +2,6 @@ x = int(input('x = '))
 y = int(input('y = '))
 ope = input('ope = ')
 
-# def eval(x,y,ope):
-#     if ope == '+':
-#         return x + y
-#     if ope == '-':
-#         return x - y
-#     if ope == '*':
-#         return x * y
-#     if ope == '/':
-#         return x / y
-
-# print(eval(9,10,'+'))
-
 result = 0
 notice = ''
 if ope == '+':

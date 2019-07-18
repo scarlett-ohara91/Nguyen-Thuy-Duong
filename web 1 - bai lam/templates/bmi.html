@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Your BMI is: {{ SB_BMI }} </h3>           
+    <h5>Your condition: </h5>
+    {% if SB_BMI < 16  %}
+        <!-- dung cai h3,h4 dc ko -->
+        <p>Severely underweight</p>
+    {% elif 16 <= SB_BMI < 18.5 %}
+        <p>Underweight</p> 
+    {% elif 18.5 <= SB_BMI < 25 %}
+        <p>Normal</p>
+    {% elif 25 <= SB_BMI < 30 %}
+        <p>Overweight</p>
+    {% else %}
+        <p>Obese</p>            
+    {% endif %}
+    <hr>
+
+</body>
+</html>
