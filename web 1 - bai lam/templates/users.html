@@ -8,14 +8,10 @@
 </head>
 <body>
     <h3>The information you need is: </h3>           
-    {% if username in name_users  %}
         <p>His/her name: {{ person_2.name }}</p>
         <p>His/her gender: {{ person_2.gender }}</p>
         <p>His/her age: {{ person_2.age }}</p>
         <!-- thử ko cần 3 dòng p. Thử dùng tên ko thôi ko cần cả họ vs đệm -->
-    {% else %}
-        <p>This user does not exist</p>            
-    {% endif %}
     <hr>
     
 </body>

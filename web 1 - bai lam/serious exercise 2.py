@@ -20,8 +20,11 @@ name_users = ['Huy','Tuan Anh']
 # cái return nó ko đi cùng với for đc ah? chỉ hiển thị 1 cái ah
 
 def info_listing(username):
-    person = users[username]
-    return render_template('users.html',person_2 = person,name_users=name_users,username=username)
+       if username not in name_users:
+              return 'This user does not exist'
+       else:
+              person = users[username]
+              return render_template('users.html',person_2 = person,name_users=name_users,username=username)
 
 if __name__ == '__main__':
     app.run(debug ='True') 
