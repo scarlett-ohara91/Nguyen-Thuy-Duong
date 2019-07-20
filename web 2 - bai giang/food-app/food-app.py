@@ -5,12 +5,12 @@ app = Flask(__name__)
 all_foods = [
         {'title':'Trà sữa trân châu đường đen',
         'description':'ngọt ngào dễ uống',
-        'type': 'food',
+        'type': 'drink',
         'link':'https://thuonghieuvietnoitieng.com/image/cache/admin/b6e81d47956a4d244614d5ec42bb9e35a74aa7bf/Tocotoco/xTRA-SUA-TRAN-CHAU-HOANG-GIA-5-445x445.jpg.pagespeed.ic.uANmujFmL5.jpg',
         'id':'TSTC'},
         {'title':'Caramen trà xanh',
         'description':'nhẹ nhàng thanh mát',
-        'type': 'drink',
+        'type': 'food',
         'link':'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFcZH-kNB9nK6mkCjCAW9kjosNnkN7Lz8-OoKA62RA2oYzzFT2',
         'id':'CRM'},
         {'title':'Táo đỏ chưng',
@@ -63,9 +63,26 @@ def add_food():
         all_foods.append(added_food)
         return redirect('/foods')
 
-@app.route('/foods/edit/<int:index>')
-def edit(index):
-    
+@app.route('/foods/edit/<int:index>', methods=['GET','POST'])
 
+def edit(index):
+    if request.method == 'GET':
+        food = all_foods[index]
+        return render_template('edit_food.html',food=food)
+    elif request.method == 'POST':
+        form = request.form
+        title = form['title']
+        description = form['desc']
+        link = form['img_link']
+        food_type = form['food_type']
+        edited_food = {
+            'title':title,
+            'description':description,
+            'link':link,
+            'type':food_type
+        }
+        all_foods[index] = edited_food
+        return redirect('/foods')
+    
 if __name__ == '__main__':
     app.run(debug ='True')      
