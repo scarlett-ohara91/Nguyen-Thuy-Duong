@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/new_bike">Thêm xe đi a e ơiii</a>
+    {% for bike in ALL_BIKES %}
+        <h1>Xe số: {{ loop.index }} </h1>
+        <h3>Model: {{ bike.model }} </h3> 
+        <h3>Daily fee: {{ bike.daily_fee }} </h3>          
+        <h5>Image: {{ bike.img_link }} </h5>
+        <h5>Year: {{ bike.year }} </h5>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
